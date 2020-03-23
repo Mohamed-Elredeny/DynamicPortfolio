@@ -119,21 +119,24 @@
 					<h2 style="border: solid 2px #eeeeee ; border-bottom: .5px; border-left: .5px; border-right: .5px; text-align: center;" id="projects">Projects</h2>
 						<section class="posts" style="border-top: 0;">
 						<?php  foreach($projects as $pro){ ?>
+							<?php $pro_img = explode(',',$pro['iamge']) ?>
 							<article style="border-right: 0;">
 								<header>
 									<h2><a href="#"><?php echo $pro['name'] ?></h2>
 								</header>
-								<a href="#" class="image fit"><img src="<?php echo $pro['iamge'] ?>"  /></a>
+								<a href="#" class="image fit"><img src="<?php echo $pro_img[0] ?>"  /></a>
 							
 								<ul class="actions special">
-									<li><a href="#" class="button">Full Story</a></li>
+									<li><a href="project.php?proid= <?php echo $pro['id'] ?>" class="button">Details</a></li>
 								</ul>
 							</article>
+
 							
 						<?php } ?>
-							
-					
+						
 						</section>
+
+
 				</div>
 
 				<!-- Footer -->

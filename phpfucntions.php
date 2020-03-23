@@ -11,3 +11,4 @@ $certifications = mysqli_fetch_all($q2,MYSQLI_ASSOC);
 
 $q3 = mysqli_query($con,"SELECT * FROM projects");
 $projects = mysqli_fetch_all($q3,MYSQLI_ASSOC);
+
