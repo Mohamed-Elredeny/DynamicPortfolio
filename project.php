@@ -14,106 +14,61 @@
 <head>
  <title>Portfolio Project</title>
  <style>
-  *{
-   margin-right: 30px;
-   margin-left: 20px;
-   margin-top: 0;
-   margin-bottom: 0;
-  }
-  .mother{
-   border: 20px;
-   background: #212931;
-   width: 100%;
-   height: 656px;
-  }
-  .cert{
-   background: white;
-   width: 80%;
-   height: 520px;
-   position: relative;
-   left: 8%;
-   top:11%;
-   border-radius: 20px;
-  }
-  .cert-img{
-   height: 300px;
-   position: relative;
-   left:60%;
-   top:95px;
-   border-radius: 20px;
-  }
-  .cert-font{
-   font-size: 25px;
-   position: relative;
-   display: block;
-   bottom: 47%;
-   margin-bottom: 6%; 
+    body{
+        overflow: hidden;
+    }
+    .mother{
 
-  }
-  .cert-font1{
-   font-size: 25px;
-   position: relative;
-   display: block;
-   bottom: 32%;
-   margin-bottom: 2%; 
+      position: absolute;
+      border: 20px;
+      background: #212931;
+      width: 100%;
+      height: 100%;
 
-  }
-  .cer-name{
-   position: absolute;
-   top: 19%;
-   left: 26%;
-   border: 2px solid #212931;
-   font-size: 20px;
-   text-align: center;
-  }
-   .cer-link{
-   position: absolute;
-   top: 72%;
-   left: 24%;
-   border: 2px solid #212931;
-   font-size: 20px;
-   text-align: center;
-   width: 60%;
-   cursor: pointer;
-  }
-  .cer-textarea{
-   position: absolute;
-   top:32%;
-   left: 26%;
-   height: 150px;
-   border: 2px solid #212931;
-   font-size: 20px;
-   text-align: center;
-  }
-  .cert-center{
-   position: absolute;
-   top:70%;
-   left: 26%;
-   border: 2px solid #212931;
-   font-size: 20px;
-   display: block;
-   text-align: center;
+      
+    }
+    .cert{
+      background: white;
+      width: 80%;
+      height:80%;
+      position: relative;
+      left: 10%;
+      top:10%;
+      border-radius: 20px;
+      padding-top:8%;
+    }
+    .mySlides{
+      position: relative;
+      right: 20%;
+      width: 90%;
+      border-radius: 20px;
 
-  }
-  .cert-hours{
-   position: absolute;
-   top:80%;
-   left: 26%;
-   border: 2px solid #212931;
-   font-size: 20px;
-   display: block;
-   text-align: center;
-  }
-  .mySlides {display:none;
-  	transition-duration: 500ms;
-  	width: 300px;
-  	position: relative;
-  	left: 60%;
-  	top:20px;
-  	height: 300px;
-  	border-radius: 20px;
-  }
 
+
+    }
+    .res-table{
+      height: 80%;
+      width: 70%;
+      position: relative;
+      left: 20%;
+      padding: 200px;
+
+    }
+
+    .ImpDet{
+      font-size: 20px;
+      font-weight: bolder;
+
+    }
+    .ImpDet1{
+      font-size: 15px;
+      
+
+    }
+    table td{
+      padding: 20px;
+    }
+   
  </style>
    <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -126,31 +81,72 @@
  <div class="mother">
   <div class="cert">
 
-   <!-- slider -->
+  <div class="row">
+    <?php foreach($cert as $cer){ ?>
+  <div class="col-md-8">
+          <div style="overflow-x:auto;">
+         
+            <table class="res-table">
+              <tr>
+                <td >
+                  <label class="ImpDet">
+                    Project 
+                  </label>
+                  
+                </td>
+                <td>
+                  <label class="ImpDet1">
+                    <?php echo $cer['name']; ?>
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="ImpDet">
+                    Details
+                  </label>
+                </td>
+                <td>
+                  <label class="ImpDet1">
+                    <?php echo $cer['Details']; ?>
 
-<div class="w3-content w3-display-container">
-	
-		 <?php foreach($imgs as $r){ 
-           echo "<img src='images/". $r .  "'  class='mySlides' />";  }?>
+                  </label>
+                </td>
            
+              </tr>
+               <tr>
+                <td>
+                  <label class="ImpDet">
+                    Link
+                  </label>
+                </td>
+                <td>
+                  <label class="ImpDet1">
+                   <a href="<?php echo $cer['link'] ?>" ><button class="btn btn-danger">Project Link</button></a>
+                  </label>
+                </td>
+              
+              </tr>
+               
+            </table>
 
-  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)" style="position: relative;left: 55%;bottom:130px;">&#10094;</button>
-  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-
- 
-</div>
-   <!-- slider -->
-
-   <?php foreach($cert as $ce){ ?>
+          </div>
+  </div>
+<?php } ?>
+  <div class="col-md-4">
   
-   <label class="cert-font">Project Name</label>
-   <label class="cert-font">Project Details </label>
+    <!-- slider -->
+  <div class="w3-content w3-display-container">
+  		 <?php foreach($imgs as $r){ 
+             echo "<img src='images/". $r .  "'  class='mySlides' />"; 
+           }?>
+      <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)" style="position: relative;right: 10%;top:30px;">&#10094;</button>
+      <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)" style="position: relative;left: 35%;top:30px;">&#10095;</button> 
+  </div>
+     <!-- slider -->
+   </div>
+  </div>
    
-   <label class="cert-font1">Project Link</label>
-   <input type="" name="" class="cer-name" value="<?php echo $ce['name'] ?>">
-   <textarea  class="cer-textarea" ><?php echo $ce['Details'] ?></textarea>
-  	<label class="cer-link"><a href="<?php echo $ce['link']  ; ?>">Project Link</a></label>
-  <?php } ?>
   </div>
  </div>
 

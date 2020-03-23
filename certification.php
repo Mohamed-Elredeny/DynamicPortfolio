@@ -11,106 +11,140 @@
 <html>
 <head>
 	<title>Portfolio Project</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 	<style>
-		*{
-			margin-right: 30px;
-			margin-left: 20px;
-			margin-top: 0;
-			margin-bottom: 0;
+		body{
+				overflow: hidden;
 		}
 		.mother{
+
+			position: absolute;
 			border: 20px;
 			background: #212931;
 			width: 100%;
-			height: 656px;
+			height: 100%;
+
+			
 		}
 		.cert{
 			background: white;
 			width: 80%;
-			height: 520px;
+			height:80%;
 			position: relative;
-			left: 8%;
-			top:11%;
+			left: 10%;
+			top:10%;
 			border-radius: 20px;
+			padding-top:8%;
 		}
-		.cert-img{
-			height: 300px;
+		.res-img{
 			position: relative;
-			left:60%;
-			top:95px;
+			right: 20%;
+			width: 90%;
 			border-radius: 20px;
+
+
+
 		}
-		.cert-font{
-			font-size: 25px;
+		.res-table{
+			height: 80%;
+			width: 70%;
 			position: relative;
-			display: block;
-			bottom: 40%;
-			margin-bottom: 5%; 
+			left: 20%;
 
 		}
-		.cert-font1{
-			font-size: 25px;
-			position: relative;
-			display: block;
-			bottom: 18%;
-			margin-bottom: 2%; 
+		td{
+			padding: 20px;
+		}
+		.ImpDet{
+			font-size: 20px;
+			font-weight: bolder;
 
 		}
-		.cer-name{
-			position: absolute;
-			top: 19%;
-			left: 26%;
-			border: 2px solid #212931;
-			font-size: 20px;
-			text-align: center;
-		}
-		.cer-textarea{
-			position: absolute;
-			top:32%;
-			left: 26%;
-			height: 150px;
-			border: 2px solid #212931;
-			font-size: 20px;
-			text-align: center;
-		}
-		.cert-center{
-			position: absolute;
-			top:70%;
-			left: 26%;
-			border: 2px solid #212931;
-			font-size: 20px;
-			display: block;
-			text-align: center;
+		.ImpDet1{
+			font-size: 15px;
+			
 
 		}
-		.cert-hours{
-			position: absolute;
-			top:80%;
-			left: 26%;
-			border: 2px solid #212931;
-			font-size: 20px;
-			display: block;
-			text-align: center;
-		}
+		
 	</style>
 </head>
 <body>
 	<div class="mother">
 		<div class="cert">
-			<?php foreach($cert as $ce){ ?>
-			<img src="images/usama.jpg" class="cert-img"> 
-			<label class="cert-font">Certification Name</label>
-			<label class="cert-font">About Certification</label>
-			<label class="cert-font1">Center</label>
-			<label class="cert-font1">Hours</label>
-			<input type="" name="" class="cer-name" value="<?php echo $ce['name'] ?>">
-			<textarea  class="cer-textarea" ><?php echo $ce['about'] ?></textarea>
-			<input type="" name="" class="cert-center" value="<?php echo $ce['center'] ?>">
-			<input type="" name="" class="cert-hours" value="<?php echo $ce['numOfHours'] . " Hours"?>">
-		<?php } ?>
+			<div class="row">
+				<div class="col-md-8">
+					<div style="overflow-x:auto;">
+						<?php foreach($cert as $cer){ ?>
+					  <table class="res-table">
+					    <tr>
+					    	<td>
+					    		<label class="ImpDet">
+					    			Certification 
+					    		</label>
+					    		
+					    	</td>
+					    	<td>
+					    	 	<label class="ImpDet1">
+					    			<?php echo $cer['name']; ?>
+					    		</label>
+					    	</td>
+					    </tr>
+					    <tr>
+					    	<td>
+					    		<label class="ImpDet">
+					    			About
+					    		</label>
+					    	</td>
+					    	<td>
+					    		<label class="ImpDet1">
+					    			<?php echo $cer['about']; ?>
+					    		</label>
+					    	</td>
+					 
+					    </tr>
+					     <tr>
+					    	<td>
+					    		<label class="ImpDet">
+					    			Center
+					    		</label>
+					    	</td>
+					    	<td>
+					    		<label class="ImpDet1">
+					    			<?php echo $cer['center']; ?>
+					    		</label>
+					    	</td>
+					    
+					    </tr>
+					     <tr>
+					    	<td>
+					    		<label class="ImpDet">
+					    			Hours
+					    		</label>
+					    	</td>
+					    	<td>
+					    		<label class="ImpDet1">
+					    			<?php echo $cer['about']; ?>
+					    		</label>
+					    	</td>
+					    	
+					    </tr>
+					  </table>
+					<?php } ?>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<img src="images/usama.jpg" class="res-img">
+				</div>
+			</div>
+			
 		</div>
 	</div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </html>
 
 <?php } ?>
