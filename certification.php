@@ -132,12 +132,13 @@
 					    	
 					    </tr>
 					  </table>
-					<?php } ?>
+					
 					</div>
 				</div>
 				<div class="col-md-4">
-					<img src="images/usama.jpg" class="res-img">
+					<img src="images/<?php echo	$cer['image'] ?>" class="res-img" >
 				</div>
+				<?php } ?>
 			</div>
 			
 		</div>

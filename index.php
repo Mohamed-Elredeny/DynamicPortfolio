@@ -97,7 +97,7 @@
 									<header>
 										<h2> <?php echo $cer['name']; ?></h2>
 									</header>
-									<a href="#" class="image fit"><img src="images/<?php echo $cer['image'] ?>" alt="" /></a>
+									<a href="#" class="image fit"><img style='width: 500px;height: 300px' src="images/<?php echo $cer['image'] ?>" alt="" /></a>
 									<p> <?php echo $cer['about']; ?></p>
 									<ul class="actions special">
 										<li><a href="certification.php?id= <?php echo $cer['id'] ?>" class="button">Details</a></li>
@@ -124,7 +124,7 @@
 								<header>
 									<h2><a href="#"><?php echo $pro['name'] ?></h2>
 								</header>
-								<a href="#" class="image fit"><img src="<?php echo $pro_img[0] ?>"  /></a>
+								<a href="#" class="image fit"><img style='width: 400px;height: 500px' src="<?php echo $pro_img[0] ?>"  /></a>
 							
 								<ul class="actions special">
 									<li><a href="project.php?proid= <?php echo $pro['id'] ?>" class="button">Details</a></li>
